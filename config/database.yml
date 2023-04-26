@@ -80,7 +80,8 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: authenticator_api_production
-  username: authenticator_api
-  password: <%= ENV["AUTHENTICATOR_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV["API_DATABASE_URL"] %>
+  # <<: *default
+  # database: authenticator_api_production
+  # username: authenticator_api
+  # password: <%= ENV["AUTHENTICATOR_API_DATABASE_PASSWORD"] %>
