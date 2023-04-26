@@ -5,7 +5,7 @@ class Users::SessionsController < Devise::SessionsController
 
   private
     def respond_with(resource, _opts = {})
-      render json: { message: 'Logado com sucesso.' }, status: :ok
+      render json: resource.as_json.merge({ accessToken: request.env['warden-jwt_auth.token'] }), status: :ok
     end
 
     def respond_to_on_destroy
